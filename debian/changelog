@@ -1,0 +1,67 @@
+live-config-semplice (2.13.0) pulse; urgency=low
+
+  * Initial upload to pulse.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sun, 03 Jun 2012 21:37:27 +0200
+
+live-config-semplice (1.13.0) emily; urgency=low
+
+  * nonfree: use remove_meta.sh instead of remove_nonfree.sh
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Mon, 03 Oct 2011 13:09:21 +0200
+
+live-config-semplice (1.12.3) emily; urgency=low
+
+  * Do not ship anymore alaninstaller.
+  * debian/control: depend on live-config-linstaller
+  * Change maintainer to match my new GPG key.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 16 Aug 2011 12:36:06 +0200
+
+live-config-semplice (1.12.2) emily; urgency=low
+
+  * nonfree: Use /bin/bash instead of /bin/sh.
+
+ -- Eugenio (g7) <morarossa@gmail.com>  Thu, 14 Jul 2011 15:53:59 +0200
+
+live-config-semplice (1.12.1) emily; urgency=low
+
+  * If LIVE_ENABLE is populated, remove_nonfree.
+
+ -- Eugenio (g7) <morarossa@gmail.com>  Wed, 13 Jul 2011 23:22:04 +0200
+
+live-config-semplice (1.12.0) emily; urgency=low
+
+  * Added new script, 902-nonfree.
+
+ -- Eugenio (g7) <morarossa@gmail.com>  Wed, 13 Jul 2011 18:03:18 +0200
+
+live-config-semplice (1.11.4) emily; urgency=low
+
+  * alaninstaller: fixed if in Configure_alaninstaller()
+
+ -- Eugenio (g7) <morarossa@gmail.com>  Sat, 11 Jun 2011 19:23:12 +0200
+
+live-config-semplice (1.11.3) emily; urgency=low
+
+  * Fixed alaninstaller.
+
+ -- Eugenio (g7) <morarossa@gmail.com>  Sat, 11 Jun 2011 17:15:34 +0200
+
+live-config-semplice (1.11.2) emily; urgency=low
+
+  * Should work now...
+
+ -- Eugenio (g7) <morarossa@gmail.com>  Fri, 10 Jun 2011 22:31:44 +0200
+
+live-config-semplice (1.11.1) emily; urgency=low
+
+  * Should work now.
+
+ -- Eugenio (g7) <morarossa@gmail.com>  Fri, 10 Jun 2011 21:36:38 +0200
+
+live-config-semplice (1.11.0-1) emily; urgency=low
+
+  * Initial release.
+
+ -- Eugenio (g7) <morarossa@gmail.com>  Fri, 10 Jun 2011 19:54:32 +0200

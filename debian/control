@@ -1,0 +1,18 @@
+Source: live-config-semplice
+Section: misc
+Priority: optional
+Maintainer: Eugenio Paolantonio (g7) <me@medesimo.eu>
+Build-Depends: debhelper (>= 8)
+Standards-Version: 3.9.2
+Homepage: http://launchpad.net/semplice
+#Vcs-Browser: http://git.example.org/?p=live-config-foobar.git
+#Vcs-Git: git://git.example.org/git/live-config-foobar.git
+
+Package: live-config-semplice
+Architecture: all
+Depends: ${misc:Depends}, live-config, live-config-linstaller
+Description: Additional Configuration Scripts for Debian Live (semplice)
+ live-config contains the scripts needed to perform late-userspace actions
+ on Debian Live systems.
+ .
+ This package contains the additional semplice scripts.

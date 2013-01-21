@@ -1,0 +1,69 @@
+#!/bin/sh
+
+## semplicelive - Live-specific user settings for Semplice Live
+## Copyright (C) 2011 Eugenio "g7" Paolantonio <morarossa@gmail.com>
+##
+## live-config-semplice comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+semplicelive ()
+{
+	# Checking if package is installed or already configured
+	#if [ ! -e /var/lib/dpkg/info/foobar.list ] || \
+	#   [ -e /var/lib/live/config/foobar ]
+	#then
+	#	return
+	#fi
+
+	echo -n " semplicelive"
+
+	# Get username
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.username=*|username=*)
+				LIVE_USERNAME="${_PARAMETER#*username=}"
+				;;
+		esac
+	done
+
+	if [ "$LIVE_USERNAME" ]; then
+		Configure_semplicelive
+	fi
+}
+
+Configure_semplicelive ()
+{
+	# Set semplice-live-mode to yeahh, this is a live system that has been unconfigured.
+	echo "yeahh" > /etc/semplice-live-mode
+	
+	# Append to user's .bashrc some strings to make TTY more familiar if X doesn't work
+cat >> /home/$LIVE_USERNAME/.bashrc <<EOF
+if [ "\$TERM" = "linux" ]; then
+cat <<EOW
+
+#################################################################
+# Hi user! Welcome to the Semplice Live System!			#
+# If you see this message the reasons are four:			#
+#  1) Semplice is booting and after some			#
+#     seconds/minutes you get the graphical system;		#
+#  2) You have selected your language and keyboard		#
+#     and Semplice is applying your settings			#
+#  3) Semplice hasn't detected your graphics configuration	#
+#     and then you can't use system without manual		#
+#     intervent. If you think so, type "sudo reboot" (without	#
+#     quotes) and press ENTER. The system should reboot.	#
+#  4) You're a linux geek and you want to do some	        #
+#     cool things in the shell. Yay!                            #
+#################################################################
+EOW
+fi
+EOF
+
+	# Creating state file
+	touch /var/lib/live/config/semplicelive
+}
+
+semplicelive
