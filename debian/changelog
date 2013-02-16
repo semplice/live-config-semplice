@@ -1,3 +1,9 @@
+live-config-semplice (3.99.0) unstable; urgency=low
+
+  * Initial upload to current.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Sat, 16 Feb 2013 18:17:00 +0100
+
 live-config-semplice (2.13.0) pulse; urgency=low
 
   * Initial upload to pulse.
