@@ -1,3 +1,10 @@
+live-config-semplice (5.0.0) unstable; urgency=low
+
+  * Added 902-xscreensaver to disable autolock in live mode.
+  * Use meta-nonfree instead of system-nonfree in 901-nonfree.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Thu, 29 Aug 2013 19:37:31 +0200
+
 live-config-semplice (3.99.0) unstable; urgency=low
 
   * Initial upload to current.
