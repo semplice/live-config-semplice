@@ -11,8 +11,8 @@
 nonfree ()
 {
 	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/system-nonfree.list ] || \
-	   [ -e /var/lib/live/config/system-nonfree ]
+	if [ ! -e /var/lib/dpkg/info/meta-nonfree.list ] || \
+	   [ -e /var/lib/live/config/meta-nonfree ]
 	then
 		return
 	fi
@@ -39,7 +39,7 @@ Configure_nonfree ()
 	if [ "$LIVE_ENABLE" ]; then
 		# Begin.
 		
-		/usr/bin/remove_meta.sh system-nonfree -n -v &> /removed_nonfree.status
+		/usr/bin/remove_meta.sh meta-nonfree -n -v &> /removed_nonfree.status
 	fi
 
 	# Creating state file

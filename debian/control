@@ -3,10 +3,10 @@ Section: misc
 Priority: optional
 Maintainer: Eugenio Paolantonio (g7) <me@medesimo.eu>
 Build-Depends: debhelper (>= 8)
-Standards-Version: 3.9.2
-Homepage: http://launchpad.net/semplice
-#Vcs-Browser: http://git.example.org/?p=live-config-foobar.git
-#Vcs-Git: git://git.example.org/git/live-config-foobar.git
+Standards-Version: 3.9.4
+Homepage: http://semplice-linux.org
+Vcs-Browser: https://github.com/semplice/live-config-semplice
+Vcs-Git: https://github.com/semplice/live-config-semplice.git
 
 Package: live-config-semplice
 Architecture: all
