@@ -35,9 +35,11 @@ zramcfg ()
 Configure_zramcfg ()
 {
 	if [ "$CONFIG" != "disabled" ]; then
-		/usr/bin/zramcfg &> /dev/null
+		/usr/bin/zramcfg -q
 		
-		modprobe zram
+		NUM_DEVICES="`grep -c processor /proc/cpuinfo`"
+		
+		modprobe zram num_devices=$NUM_DEVICES
 	fi
 
 	# Creating state file
