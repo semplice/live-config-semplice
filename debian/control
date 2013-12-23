@@ -10,7 +10,7 @@ Vcs-Git: https://github.com/semplice/live-config-semplice.git
 
 Package: live-config-semplice
 Architecture: all
-Depends: ${misc:Depends}, live-config, live-config-linstaller
+Depends: ${misc:Depends}, live-config, live-config-linstaller, zramcfg
 Description: Additional Configuration Scripts for Debian Live (semplice)
  live-config contains the scripts needed to perform late-userspace actions
  on Debian Live systems.

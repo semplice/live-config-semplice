@@ -1,0 +1,47 @@
+#!/bin/sh
+
+## zramcfg - Configure zram in Semplice Live
+## Copyright (C) 2013 Eugenio "g7" Paolantonio <morarossa@gmail.com>
+##
+## live-config-semplice comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
+## This is free software, and you are welcome to redistribute it
+## under certain conditions; see COPYING for details.
+
+
+zramcfg ()
+{
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/zramcfg.list ] || \
+	   [ -e /var/lib/live/config/zramcfg ]
+	then
+		return
+	fi
+
+	echo -n " zramcfg"
+
+	# Get username
+	for _PARAMETER in ${_CMDLINE}
+	do
+		case "${_PARAMETER}" in
+			live-config.nozramcfg|nozramcfg)
+				CONFIG="disabled"
+				;;
+		esac
+	done
+
+	Configure_zramcfg
+}
+
+Configure_zramcfg ()
+{
+	if [ "$CONFIG" != "disabled" ]; then
+		/usr/bin/zramcfg &> /dev/null
+		
+		modprobe zram
+	fi
+
+	# Creating state file
+	touch /var/lib/live/config/zramcfg
+}
+
+zramcfg
