@@ -1,3 +1,9 @@
+live-config-semplice (6.0.1) unstable; urgency=medium
+
+  * New live-config is (correctly) more strict regarding the script executable bits.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Tue, 24 Jun 2014 22:59:03 +0200
+
 live-config-semplice (6.0.0) unstable; urgency=low
 
   * Semplice 6 release.
