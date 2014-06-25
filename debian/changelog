@@ -1,3 +1,11 @@
+live-config-semplice (6.0.2) unstable; urgency=medium
+
+  * Adapted the scripts to the new live-config syntax.
+  * Deleted the xscreensaver hook, as an alternative
+    has been included upstream.
+
+ -- Eugenio Paolantonio (g7) <me@medesimo.eu>  Wed, 25 Jun 2014 11:58:26 +0200
+
 live-config-semplice (6.0.1) unstable; urgency=medium
 
   * New live-config is (correctly) more strict regarding the script executable bits.
