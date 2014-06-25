@@ -1,26 +1,19 @@
 #!/bin/bash
 
 ## nonfree - If false, remove all nonfree bits installed from system-nonfree
-## Copyright (C) 2011 Eugenio "g7" Paolantonio <morarossa@gmail.com>
+## Copyright (C) 2006-2014 Daniel Baumann <mail@daniel-baumann.ch>
+## Copyright (C) 2011-2014 Eugenio "g7" Paolantonio <me@medesimo.eu>
 ##
 ## live-config-semplice comes with ABSOLUTELY NO WARRANTY; for details see COPYING.
 ## This is free software, and you are welcome to redistribute it
 ## under certain conditions; see COPYING for details.
 
 
-nonfree ()
+Cmdline()
 {
-	# Checking if package is installed or already configured
-	if [ ! -e /var/lib/dpkg/info/meta-nonfree.list ] || \
-	   [ -e /var/lib/live/config/meta-nonfree ]
-	then
-		return
-	fi
-
-	echo -n " nonfree"
-
+	
 	# Get username
-	for _PARAMETER in ${_CMDLINE}
+	for _PARAMETER in ${LIVE_CONFIG_CMDLINE}
 	do
 		case "${_PARAMETER}" in
 			live-config.nonfree=false|nonfree=false)
@@ -29,11 +22,22 @@ nonfree ()
 		esac
 	done
 	
-
-	Configure_nonfree
 }
 
-Configure_nonfree ()
+Init() {
+	
+	# Checking if package is installed or already configured
+	if [ ! -e /var/lib/dpkg/info/meta-nonfree.list ] || \
+	   [ -e /var/lib/live/config/meta-nonfree ]
+	then
+		exit 0
+	fi
+
+	echo -n " nonfree"
+
+}
+
+Config()
 {
 	
 	if [ "$LIVE_ENABLE" ]; then
@@ -46,4 +50,6 @@ Configure_nonfree ()
 	touch /var/lib/live/config/nonfree
 }
 
-nonfree
+Cmdline
+Init
+Config
